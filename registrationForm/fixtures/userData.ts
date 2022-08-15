@@ -1,12 +1,12 @@
-export const userTomFName: string = "Tom";
-export const userTomSName: string = "Sawyer";
-export const userTomEmail: string = "toms@gmail.com";
-export const userTomPhoneNumber: string = "+1 (555) 555-1234";
-export const userTomAge: number = 9;
-export const userTomPassword: string = "123tom_s456";
+export const USER_TOM_F_NAME: string = "Tom";
+export const USER_TOM_S_NAME: string = "Sawyer";
+export const USER_TOM_EMAIL: string = "toms@gmail.com";
+export const USER_TOM_PHONE_NUMBER: string = "+1 (555) 555-1234";
+export const USER_TOM_AGE: number = 9;
+export const USER_TOM_PASSWORD: string = "123tom_s456";
 
-export const userTomFNameNeg: string = "";
-export const userTomSNameNeg: string = "";
-export const userTomEmailNeg: string = "toms.gmail.com";
-export const userTomAgeNeg: number = 0;
-export const userTomPasswordNeg: string = "";
+export const USER_TOM_F_NAME_NEG: string = "";
+export const USER_TOM_S_NAME_NEG: string = "";
+export const USER_TOM_EMAIL_NEG: string = "toms.gmail.com";
+export const USER_TOM_AGE_NEG: number = 0;
+export const USER_TOM_PASSWORD_NEG: string = "";

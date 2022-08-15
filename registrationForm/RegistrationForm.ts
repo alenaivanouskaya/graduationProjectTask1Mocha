@@ -1,4 +1,10 @@
-import { ageError, emailError, emptyError, phoneNumberError, repeatPasswordError } from "./fixtures/errorMessages";
+import {
+    AGE_ERROR,
+    EMAIL_ERROR,
+    EMPTY_ERROR,
+    PHONE_NUMBER_ERROR,
+    REPEAT_PASSWORD_ERROR,
+} from "./fixtures/errorMessages";
 
 export class RegistrationForm {
     private _userFirstName: string = "";
@@ -34,44 +40,44 @@ export class RegistrationForm {
     set firstName(value: string) {
         value = value.trim();
         if (value === "") {
-            throw emptyError;
+            throw EMPTY_ERROR;
         }
         this._userFirstName = value;
     }
     set secondName(value: string) {
         value = value.trim();
         if (value === "") {
-            throw emptyError;
+            throw EMPTY_ERROR;
         }
         this._userSecondName = value;
     }
     set email(value: string) {
         if (!value.includes("@")) {
-            throw emailError;
+            throw EMAIL_ERROR;
         }
         this._userEmail = value;
     }
     set phoneNumber(value: string) {
         if (!value.includes("+")) {
-            throw phoneNumberError;
+            throw PHONE_NUMBER_ERROR;
         }
         this._userPhoneNumber = value;
     }
     set age(value: number) {
         if (value === 0) {
-            throw ageError;
+            throw AGE_ERROR;
         }
         this._userAge = value;
     }
     set password(value: string) {
         if (value === "") {
-            throw emptyError;
+            throw EMPTY_ERROR;
         }
         this._userPassword = value;
     }
     set repeatPassword(value: string) {
         if (value != this._userPassword) {
-            throw repeatPasswordError;
+            throw REPEAT_PASSWORD_ERROR;
         }
         this._userRepeatPassword = value;
     }

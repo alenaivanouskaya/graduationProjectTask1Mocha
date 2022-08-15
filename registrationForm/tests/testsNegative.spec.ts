@@ -1,43 +1,49 @@
 import { RegistrationForm } from "../RegistrationForm";
 import { expect } from "chai";
-import { ageError, emailError, emptyError, phoneNumberError, repeatPasswordError } from "../fixtures/errorMessages";
 import {
-    userTomAgeNeg,
-    userTomEmailNeg,
-    userTomFNameNeg,
-    userTomPasswordNeg,
-    userTomSNameNeg,
-    userTomPhoneNumber,
-    userTomPassword,
+    AGE_ERROR,
+    EMAIL_ERROR,
+    EMPTY_ERROR,
+    PHONE_NUMBER_ERROR,
+    REPEAT_PASSWORD_ERROR,
+} from "../fixtures/errorMessages";
+import {
+    USER_TOM_AGE_NEG,
+    USER_TOM_EMAIL_NEG,
+    USER_TOM_F_NAME_NEG,
+    USER_TOM_PASSWORD_NEG,
+    USER_TOM_S_NAME_NEG,
+    USER_TOM_PHONE_NUMBER,
+    USER_TOM_PASSWORD,
 } from "../fixtures/userData";
 
 describe("7 negative tests:", function () {
     it("1. First name", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.firstName = userTomFNameNeg)).to.throw(emptyError);
+        expect(() => (userTom.firstName = USER_TOM_F_NAME_NEG)).to.throw(EMPTY_ERROR);
     });
     it("2. Second name", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.secondName = userTomSNameNeg)).to.throw(emptyError);
+        expect(() => (userTom.secondName = USER_TOM_S_NAME_NEG)).to.throw(EMPTY_ERROR);
     });
     it("3. Email", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.email = userTomEmailNeg)).to.throw(emailError);
+        expect(() => (userTom.email = USER_TOM_EMAIL_NEG)).to.throw(EMAIL_ERROR);
     });
     it("4. Phone number", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.phoneNumber = userTomPhoneNumber.slice(1))).to.throw(phoneNumberError);
+        expect(() => (userTom.phoneNumber = USER_TOM_PHONE_NUMBER.slice(1))).to.throw(PHONE_NUMBER_ERROR);
     });
     it("5. Age", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.age = userTomAgeNeg)).to.throw(ageError);
+        expect(() => (userTom.age = USER_TOM_AGE_NEG)).to.throw(AGE_ERROR);
     });
     it("6. Password", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.password = userTomPasswordNeg)).to.throw(emptyError);
+        expect(() => (userTom.password = USER_TOM_PASSWORD_NEG)).to.throw(EMPTY_ERROR);
     });
     it("7. Repeat password", function () {
         const userTom = new RegistrationForm();
-        expect(() => (userTom.repeatPassword = userTomPassword.slice(1))).to.throw(repeatPasswordError);
+        expect(() => (userTom.repeatPassword = USER_TOM_PASSWORD.slice(1))).to.throw(REPEAT_PASSWORD_ERROR);
     });
 });
